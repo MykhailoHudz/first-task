@@ -1,4 +1,5 @@
 import { useFormik, FormikHelpers } from "formik";
+import MaskedInput from "react-text-mask";
 import { basicSchema } from "../../schemas";
 import {
   ErrorMsg,
@@ -81,13 +82,34 @@ function RegistrationForm({ setFormValues }: RegistrationFormProps) {
         <RegistrationFormInputsListItem>
           <RegistrationFormInputsListItemLabel htmlFor="phoneNumber">
             Phone Number:
-            <input
+            <MaskedInput
               type="text"
               id="phoneNumber"
               name="phoneNumber"
               placeholder="Phone Number"
               onChange={formik.handleChange}
               value={formik.values.phoneNumber}
+              mask={[
+                "+",
+                "3",
+                "8",
+                " ",
+                "(",
+                /[0-9]/,
+                /\d/,
+                /\d/,
+                ")",
+                " ",
+                /\d/,
+                /\d/,
+                "-",
+                /\d/,
+                /\d/,
+                "-",
+                /\d/,
+                /\d/,
+                /\d/,
+              ]}
             />
           </RegistrationFormInputsListItemLabel>
 
