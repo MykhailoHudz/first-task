@@ -1,8 +1,5 @@
-import {
-  UserInfoCont,
-  UserInfoContParagraph,
-  UserInfoContTitle,
-} from "./UserInfoContainer.styled";
+import UserInfoContListItem from "../UserInfoContListItem/UserInfoContListItem";
+import { UserInfoCont, UserInfoContTitle } from "./UserInfoContainer.styled";
 
 type UserInfoContainerProps = {
   firstName: string;
@@ -10,6 +7,7 @@ type UserInfoContainerProps = {
   phoneNumber: string;
   emailAddress: string;
   personDescription: string;
+  setShowInformation: (value: boolean) => void;
 };
 
 function UserInfoContainer({
@@ -18,37 +16,45 @@ function UserInfoContainer({
   phoneNumber,
   emailAddress,
   personDescription,
+  setShowInformation,
 }: UserInfoContainerProps) {
+  const onBackButtonClick = () => {
+    setShowInformation(false);
+  };
+
   return (
     <UserInfoCont>
       <UserInfoContTitle>Your information</UserInfoContTitle>
       <ul>
-        <li>
-          <UserInfoContParagraph>
-            First name: <span>{firstName}</span>
-          </UserInfoContParagraph>
-        </li>
-        <li>
-          <UserInfoContParagraph>
-            Last name: <span>{lastName}</span>
-          </UserInfoContParagraph>
-        </li>
-        <li>
-          <UserInfoContParagraph>
-            Phone number: <span>{phoneNumber}</span>
-          </UserInfoContParagraph>
-        </li>
-        <li>
-          <UserInfoContParagraph>
-            Email address: <span>{emailAddress}</span>
-          </UserInfoContParagraph>
-        </li>
-        <li>
-          <UserInfoContParagraph>
-            Short description: <span>{personDescription}</span>
-          </UserInfoContParagraph>
-        </li>
+        <UserInfoContListItem
+          itemTitle="First name:"
+          itemDescription={firstName}
+        />
+
+        <UserInfoContListItem
+          itemTitle="Last name:"
+          itemDescription={lastName}
+        />
+
+        <UserInfoContListItem
+          itemTitle="Phone number:"
+          itemDescription={phoneNumber}
+        />
+
+        <UserInfoContListItem
+          itemTitle="Email address:"
+          itemDescription={emailAddress}
+        />
+
+        <UserInfoContListItem
+          itemTitle="Short description:"
+          itemDescription={personDescription}
+        />
       </ul>
+
+      <button type="button" onClick={onBackButtonClick}>
+        Go Back
+      </button>
     </UserInfoCont>
   );
 }
