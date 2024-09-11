@@ -4,6 +4,7 @@ import { basicSchema } from "../../schemas";
 import {
   ErrorMsg,
   RegForm,
+  RegFormSbtBtm,
   RegistrationFormInputsList,
   RegistrationFormInputsListItem,
   RegistrationFormInputsListItemLabel,
@@ -155,7 +156,7 @@ function RegistrationForm({ setFormValues }: RegistrationFormProps) {
         </RegistrationFormInputsListItem>
       </RegistrationFormInputsList>
 
-      <button type="submit">Submit</button>
+      <RegFormSbtBtm type="submit">Submit</RegFormSbtBtm>
     </RegForm>
   );
 }

@@ -33,3 +33,15 @@ export const RegistrationFormInputsListItemLabel = styled.label`
   display: flex;
   justify-content: space-between;
 `;
+
+export const RegFormSbtBtm = styled.button`
+  padding: 5px 20px;
+  border: 1px solid #000;
+  border-radius: 10px;
+
+  transition: scale 150ms linear;
+
+  &:hover {
+    scale: 1.1;
+  }
+`;

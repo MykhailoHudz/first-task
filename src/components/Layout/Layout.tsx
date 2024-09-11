@@ -1,12 +1,12 @@
-import { NavLink, Outlet } from "react-router-dom";
-import { PageHeader} from "./Layout.styled";
+import { Outlet } from "react-router-dom";
+import { HeaderNavItem, PageHeader } from "./Layout.styled";
 
 function Layout() {
   return (
     <>
       <PageHeader>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/page">Page</NavLink>
+        <HeaderNavItem to="/">Home</HeaderNavItem>
+        <HeaderNavItem to="/page">Page</HeaderNavItem>
       </PageHeader>
 
       <main>
