@@ -17,11 +17,11 @@ type TypeRegistrationLitItemProps = {
   name: keyof TypeInitialValues;
   placeholder: string;
   formik: MyFormikProps;
-  mask: (string | RegExp)[];
+  mask?: (string | RegExp)[];
 };
 
 function RegistrationFormListItem({
-  formik,
+  formik: { handleChange, handleBlur, values, errors, touched },
   label,
   type,
   id,
@@ -34,16 +34,16 @@ function RegistrationFormListItem({
       <RegistrationFormInputsListItemLabel htmlFor={id}>
         {label}
 
-        {mask.length ? (
+        {mask ? (
           <MaskedInput
             mask={mask}
             type={type}
             id={id}
             name={name}
             placeholder={placeholder}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values[name]}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values[name]}
           />
         ) : (
           <input
@@ -51,15 +51,13 @@ function RegistrationFormListItem({
             id={id}
             name={name}
             placeholder={placeholder}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values[name]}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values[name]}
           />
         )}
       </RegistrationFormInputsListItemLabel>
-      {formik.errors[name] && formik.touched[name] && (
-        <ErrorMsg>{formik.errors[name]}</ErrorMsg>
-      )}
+      {errors[name] && touched[name] && <ErrorMsg>{errors[name]}</ErrorMsg>}
     </RegistrationFormInputsListItem>
   );
 }

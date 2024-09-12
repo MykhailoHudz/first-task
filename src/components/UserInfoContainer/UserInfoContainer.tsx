@@ -7,7 +7,7 @@ type UserInfoContainerProps = {
   phoneNumber: string;
   emailAddress: string;
   personDescription: string;
-  setShowInformation: (value: boolean) => void;
+  setFormValues: (values: null) => void;
 };
 
 function UserInfoContainer({
@@ -16,10 +16,10 @@ function UserInfoContainer({
   phoneNumber,
   emailAddress,
   personDescription,
-  setShowInformation,
+  setFormValues,
 }: UserInfoContainerProps) {
   const onBackButtonClick = () => {
-    setShowInformation(false);
+    setFormValues(null);
   };
 
   return (

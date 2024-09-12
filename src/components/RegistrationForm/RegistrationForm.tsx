@@ -18,19 +18,14 @@ export type TypeInitialValues = {
 
 type RegistrationFormProps = {
   setFormValues: (values: TypeInitialValues) => void;
-  setShowInformation: (value: boolean) => void;
 };
 
-function RegistrationForm({
-  setFormValues,
-  setShowInformation,
-}: RegistrationFormProps) {
+function RegistrationForm({ setFormValues }: RegistrationFormProps) {
   const onRegistrationFormSubmit = (
     values: TypeInitialValues,
     actions: FormikHelpers<TypeInitialValues>
   ) => {
     setFormValues(values);
-    setShowInformation(true);
     actions.resetForm();
   };
 
@@ -55,7 +50,6 @@ function RegistrationForm({
           id="firstName"
           name="firstName"
           placeholder="First Name"
-          mask={[]}
           formik={formik}
         />
 
@@ -65,7 +59,6 @@ function RegistrationForm({
           id="lastName"
           name="lastName"
           placeholder="Last Name"
-          mask={[]}
           formik={formik}
         />
 
@@ -85,7 +78,6 @@ function RegistrationForm({
           id="emailAddress"
           name="emailAddress"
           placeholder="Email Address"
-          mask={[]}
           formik={formik}
         />
 
@@ -95,7 +87,6 @@ function RegistrationForm({
           id="description"
           name="personDescription"
           placeholder="Description"
-          mask={[]}
           formik={formik}
         />
       </RegistrationFormInputsList>
