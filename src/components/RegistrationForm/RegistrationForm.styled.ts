@@ -19,21 +19,6 @@ export const RegForm = styled.form`
   margin-bottom: 30px;
 `;
 
-export const RegistrationFormInputsListItem = styled.li`
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-`;
-
-export const ErrorMsg = styled.p`
-  color: red;
-`;
-
-export const RegistrationFormInputsListItemLabel = styled.label`
-  display: flex;
-  justify-content: space-between;
-`;
-
 export const RegFormSbtBtm = styled.button`
   padding: 5px 20px;
   border: 1px solid #000;
@@ -43,5 +28,11 @@ export const RegFormSbtBtm = styled.button`
 
   &:hover {
     scale: 1.1;
+  }
+
+  &:disabled {
+    scale: none;
+    color: gray;
+    border-color: gray;
   }
 `;

@@ -17,11 +17,3 @@ export const UserInfoCont = styled.div`
 export const UserInfoContTitle = styled.h2`
   text-align: center;
 `;
-
-export const UserInfoContParagraph = styled.p`
-  font-weight: 700;
-
-  & span {
-    font-weight: 400;
-  }
-`;

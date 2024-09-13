@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { HeaderNavItem, PageHeader } from "./Layout.styled";
+import { Suspense } from "react";
 
 function Layout() {
   return (
@@ -8,9 +9,10 @@ function Layout() {
         <HeaderNavItem to="/">Home</HeaderNavItem>
         <HeaderNavItem to="/page">Page</HeaderNavItem>
       </PageHeader>
-
       <main>
-        <Outlet />
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <Outlet />
+        </Suspense>
       </main>
     </>
   );
