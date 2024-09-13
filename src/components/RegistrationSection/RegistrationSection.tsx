@@ -2,7 +2,6 @@ import RegistrationForm, {
   TypeInitialValues,
 } from "../RegistrationForm/RegistrationForm";
 import { lazy, Suspense, useState } from "react";
-// import UserInfoContainer from "../UserInfoContainer/UserInfoContainer";
 const UserInfoContainer = lazy(
   () => import("../UserInfoContainer/UserInfoContainer")
 );
